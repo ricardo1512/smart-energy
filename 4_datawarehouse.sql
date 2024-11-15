@@ -1,5 +1,3 @@
---- This is an SQL file
-
 DROP DATABASE IF EXISTS datawarehouse_project;
 
 CREATE DATABASE datawarehouse_project;
