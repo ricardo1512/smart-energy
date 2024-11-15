@@ -1,5 +1,2 @@
-# Para arquivos SQL
-*.sql linguist-language=SQL
-
-# Para arquivos XML
-*.xml linguist-language=XML
+* linguist-documentation=false
+* linguist-vendored
