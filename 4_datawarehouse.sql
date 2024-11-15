@@ -1,4 +1,4 @@
----SQL
+--- This is an SQL file
 
 DROP DATABASE IF EXISTS datawarehouse_project;
 
