@@ -1,8 +1,8 @@
 # Não considerar arquivos como documentação
-* linguist-documentation=false
+** linguist-documentation=false
 
 # Marcar arquivos como "vendidos" (não contar para métricas de código)
-* linguist-vendored
+** linguist-vendored
 
 # Marcar arquivos .md como "documentação" (caso queira marcar explicitamente)
 *.md linguist-documentation=true
