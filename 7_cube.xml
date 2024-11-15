@@ -1,0 +1,38 @@
+<Schema name="New Schema1">
+  <Cube name="AID" visible="true" cache="true" enabled="true">
+    <Table name="energy_smart">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="location_id" highCardinality="false" name="dim_location">
+      <Hierarchy name="location" visible="true" hasAll="true" allMemberName="allLocations" primaryKey="location_id">
+        <Table name="dim_location">
+        </Table>
+        <Level name="region" visible="true" column="region" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="municipality" visible="true" column="municipality" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="parish" visible="true" column="parish" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="time_id" highCardinality="false" name="dim_time">
+      <Hierarchy name="time" visible="true" hasAll="true" allMemberName="allTimes" primaryKey="time_id">
+        <Table name="dim_time">
+        </Table>
+        <Level name="year" visible="true" column="year_id" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="season" visible="true" column="season" ordinalColumn="season_id" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="month" visible="true" column="month" ordinalColumn="month_id" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="active_energy_kwh" column="active_energy_kwh" datatype="Numeric" formatString="#######,##" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="yes_smartmeters" column="yes_smartmeters" datatype="Numeric" aggregator="sum" visible="false">
+    </Measure>
+    <Measure name="total_smartmeters" column="total_smartmeters" datatype="Numeric" aggregator="sum" visible="false">
+    </Measure>
+    <CalculatedMember name="perc_smartmeters" formatString="###0.00%" formula="[Measures].[yes_smartmeters] / [Measures].[total_smartmeters]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>
