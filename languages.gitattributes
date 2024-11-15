@@ -1,4 +1,4 @@
 *.sql linguist-detectable=true
 *.sql linguist-language=sql
-*.sql text
 *.sql diff
+*.sql text working-tree-encoding=UTF-16LE eol=CRLF
