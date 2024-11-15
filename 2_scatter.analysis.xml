@@ -1,3 +1,5 @@
+<!-- This is an XML file -->
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <job xmlns="http://eobjects.org/analyzerbeans/job/1.0">
     <job-metadata>
