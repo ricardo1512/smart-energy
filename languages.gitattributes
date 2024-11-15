@@ -1,1 +1,4 @@
 * linguist-vendored
+*.sql linguist-vendored
+*.xml linguist-vendored
+* linguist-documentation=false
